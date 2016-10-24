@@ -28,8 +28,12 @@ dat$Date_time <- strptime(x = tmp, format = "%d/%m/%Y %H:%M:%S")
 
 # Plots =========================================================
 
-# Plot 1
-png(filename = "plot1.png")
-hist(x = dat$Global_active_power, col = "red", main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)")
+# Plot 3
+png(filename = "plot3.png")
+plot(x = dat$Date_time, y = dat$Sub_metering_1, type = "l", xlab = "",
+    ylab = "Energy Sub Metering")
+lines(x = dat$Date_time, y = dat$Sub_metering_2, col = "red")
+lines(x = dat$Date_time, y = dat$Sub_metering_3, col = "blue")
+legend(x = "topright", legend = names(dat[7:9]), lwd = 1,
+       col = c("black", "red", "blue"))
 dev.off()

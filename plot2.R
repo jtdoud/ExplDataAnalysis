@@ -28,8 +28,8 @@ dat$Date_time <- strptime(x = tmp, format = "%d/%m/%Y %H:%M:%S")
 
 # Plots =========================================================
 
-# Plot 1
-png(filename = "plot1.png")
-hist(x = dat$Global_active_power, col = "red", main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)")
+# Plot 2
+png(filename = "plot2.png")
+plot(x = dat$Date_time, y = dat$Global_active_power, type = "l", xlab = "",
+    ylab = "Global Active Power (killowatts)")
 dev.off()
